@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Business Plan Proforma</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#1A3A5C;--blue:#2E5F8A;--lb:#EAF4FB;--gold:#C9A84C;--gl:#FBF5E6;
+  --red:#C0392B;--green:#2E7D32;--grey:#F4F6F8;--border:#D0DCE8;
+  --text:#1A2332;--muted:#7A8A9A;--white:#fff;--amber:#E8A730;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:#F0F4F8;font-size:13px}
+@media print{
+  body{background:white;font-size:11px}
+  .no-print{display:none!important}
+  .page{box-shadow:none;margin:0;border-radius:0;page-break-after:always}
+  .page:last-child{page-break-after:avoid}
+  @page{size:A4;margin:15mm}
+  .calc-badge{display:none}
+}
+.toolbar{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);padding:10px 24px;display:flex;align-items:center;gap:16px}
+.toolbar-title{color:white;font-family:'Playfair Display',serif;font-size:15px;font-weight:700;flex:1}
+.toolbar-sub{color:#8899AA;font-size:11px}
+.btn{padding:7px 18px;border:none;border-radius:4px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.btn-print{background:var(--gold);color:var(--navy)}
+.btn-clear{background:transparent;color:#8899AA;border:1px solid #3A5070}
+.pages{padding:132px 24px 40px;max-width:880px;margin:0 auto}
+.page{background:white;border-radius:8px;box-shadow:0 2px 20px rgba(0,0,0,.08);margin-bottom:32px;overflow:hidden}
+.cover-hero{background:#6B3FA0;padding:50px 40px 36px;position:relative;overflow:hidden}
+.cover-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(201,168,76,.12)}
+.cover-tag{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.cover-title-label{color:rgba(255,255,255,.5);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.cover-field-large{background:transparent;border:none;border-bottom:2px solid rgba(201,168,76,.6);color:white;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;width:100%;padding:6px 0;margin-bottom:6px}
+.cover-field-large::placeholder{color:rgba(255,255,255,.25);font-style:italic}
+.cover-field-large:focus{outline:none;border-bottom-color:var(--gold)}
+.cover-field-medium{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-family:'DM Sans',sans-serif;font-size:14px;width:100%;padding:5px 0;margin-bottom:4px}
+.cover-field-medium::placeholder{color:rgba(255,255,255,.2);font-style:italic}
+.cover-field-medium:focus{outline:none;border-bottom-color:rgba(201,168,76,.8)}
+.cover-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;padding:24px 40px;background:var(--gl);border-bottom:2px solid var(--border)}
+.meta-item label{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.field-inline{background:transparent;border:none;border-bottom:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--navy);width:100%;padding:3px 0}
+.field-inline:focus{outline:none;border-bottom-color:var(--blue)}
+.section-header{background:var(--navy);padding:14px 28px;display:flex;align-items:center;gap:14px}
+.section-number{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--navy);flex-shrink:0}
+.section-title{color:white;font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
+.section-subtitle{color:#8899AA;font-size:11px;margin-top:2px}
+.section-body{padding:24px 28px}
+.field-group{margin-bottom:18px}
+.field-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+textarea,input[type="text"],input[type="number"]{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);border:1.5px solid var(--border);border-radius:4px;padding:10px 12px;width:100%;background:var(--grey);transition:border-color .2s,background .2s;resize:vertical}
+textarea:focus,input[type="text"]:focus,input[type="number"]:focus{outline:none;border-color:var(--blue);background:white}
+textarea{min-height:70px}
+textarea.tall{min-height:110px}
+textarea.short{min-height:50px}
+.data-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.data-table th{background:var(--navy);color:white;font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:10px 12px;text-align:left}
+.data-table td{padding:6px 10px;border:1px solid var(--border);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--grey)}
+.data-table td input[type="text"],.data-table td input[type="number"]{border:none;background:transparent;padding:2px 4px;font-size:12px;min-height:auto;resize:none;width:100%}
+.data-table td input:focus{background:#EEF4FF;border-radius:2px;outline:none}
+.data-table td.pre-filled{color:var(--muted);font-size:11px;font-style:italic}
+.data-table td.calc-out{font-weight:600;color:var(--navy);font-size:13px}
+.data-table td.calc-out-red{font-weight:600;color:var(--red);font-size:13px}
+.data-table td.calc-out-green{font-weight:600;color:var(--green);font-size:13px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.info-box{border-left:4px solid var(--blue);background:var(--lb);padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:16px;font-size:12px;color:var(--navy);line-height:1.5}
+.warn-box{border-left:4px solid var(--red);background:#FDF0EE;padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:16px;font-size:12px;color:#6B1A14;line-height:1.5}
+.gold-box{border-left:4px solid var(--gold);background:var(--gl);padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:16px;font-size:12px;color:#5A3D00;line-height:1.5}
+.green-box{border-left:4px solid var(--green);background:#F0FFF0;padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:16px;font-size:12px;color:#1B5E20;line-height:1.5}
+.divider{height:1px;background:var(--border);margin:20px 0}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi-card{background:var(--navy);border-radius:6px;padding:16px;text-align:center}
+.kpi-card label{color:rgba(255,255,255,.5);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:6px}
+.kpi-val{color:var(--gold);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;min-height:32px;display:flex;align-items:center;justify-content:center}
+.kpi-card input[type="text"]{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.3);color:var(--gold);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;text-align:center;width:100%;padding:2px 0;border-radius:0}
+.kpi-card input:focus{outline:none;border-bottom-color:var(--gold);background:transparent}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+.scenario-card{border:1.5px solid var(--border);border-radius:6px;overflow:hidden}
+.scenario-card-header{padding:10px 14px;font-size:11px;font-weight:600;color:white;text-transform:uppercase;letter-spacing:.8px}
+.sc-conservative .scenario-card-header{background:var(--red)}
+.sc-base .scenario-card-header{background:var(--blue)}
+.sc-optimistic .scenario-card-header{background:var(--green)}
+.scenario-card-body{padding:14px;background:var(--grey)}
+.scenario-card-body .field-group{margin-bottom:10px}
+.risk-row{background:white;border:1.5px solid var(--border);border-radius:6px;padding:16px;margin-bottom:12px}
+.risk-number{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--border);float:left;margin-right:14px;line-height:1}
+.page-footer{background:var(--grey);border-top:1px solid var(--border);padding:10px 28px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--muted)}
+h4{font-family:'Playfair Display',serif;font-size:14px;color:var(--navy);margin-bottom:10px;font-weight:700}
+.hint{font-size:11px;color:var(--muted);font-style:italic;margin-top:4px}
+.calc-badge{display:inline-block;background:#E8F5E9;color:#2E7D32;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;margin-left:8px;letter-spacing:.5px}
+.auto-result{background:#F0FFF0;border:1.5px solid var(--green);border-radius:4px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--green);min-height:40px;display:flex;align-items:center}
+.auto-result.negative{background:#FFF3F3;border-color:var(--red);color:var(--red)}
+.auto-result.neutral{background:var(--lb);border-color:var(--blue);color:var(--navy)}
+
+:root{--group-accent:#6B3FA0;--group-light:#F5F0FC;--group-dark:#3D1A6B}
+.group-banner{background:#6B3FA0;color:#fff;padding:9px 24px;
+  font-family:'Playfair Display',serif;font-size:13px;font-weight:700;
+  letter-spacing:1px;text-align:center;position:fixed;top:0;left:0;right:0;z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.brief-box{background:#F5F0FC;border-left:5px solid #6B3FA0;
+  border-radius:0 6px 6px 0;padding:16px 20px;margin-bottom:20px;
+  font-size:12px;line-height:1.9;color:#3D1A6B}
+.brief-box .brief-title{font-family:'Playfair Display',serif;font-size:14px;
+  font-weight:700;color:#6B3FA0;margin-bottom:8px}
+.data-table th{background:#6B3FA0!important}
+.section-number{background:#6B3FA0!important;color:#fff!important}
+
+.sync-dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0;transition:background .3s}
+.sync-dot.off{background:#E74C3C}
+.sync-dot.ok{background:#27AE60}
+.sync-dot.saved{background:#27AE60}
+.sync-dot.syncing,.sync-dot.typing,.sync-dot.connecting{background:#F39C12;animation:sdpulse .6s infinite}
+@keyframes sdpulse{0%,100%{opacity:1}50%{opacity:.3}}
+.user-chip{font-size:11px;padding:2px 8px;border-radius:10px;color:#fff;font-weight:500;white-space:nowrap}
+</style>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+<div class="group-banner no-print">⬤  GROUP 4 — Venice — Cannaregio / Castello  ·  4-Star Boutique Hotel  ·  50 Rooms</div>
+<div class="toolbar no-print" style="background:#2A0D4F;top:36px;padding:8px 20px">
+  <div style="flex:1;min-width:0">
+    <div class="toolbar-title" style="font-size:14px">Business Plan — GROUP 4</div>
+    <div class="toolbar-sub">Venice — Cannaregio / Castello  ·  4-Star Boutique Hotel</div>
+  </div>
+  <div class="session-info no-print" style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+    <span class="sync-dot off" id="sync-dot"></span>
+    <span id="sync-label" style="color:#8899AA;font-size:11px">Starting…</span>
+  </div>
+  <div id="user-chips" style="display:flex;gap:4px;flex-wrap:wrap;max-width:300px"></div>
+  <span id="user-count" style="color:#8899AA;font-size:10px;flex-shrink:0;white-space:nowrap"></span>
+  <button class="btn no-print" onclick="shareLink()" style="background:#27AE60;color:#fff;flex-shrink:0">🔗 Share</button>
+  <button class="btn btn-clear no-print" onclick="clearAll()">Clear All</button>
+  <button class="btn btn-print no-print" onclick="window.print()">🖨 Print</button>
+</div>
+<div class="toolbar-sub">Fill in the yellow/blue input fields — calculations update automatically</div>
+  </div>
+  <button class="btn btn-clear" onclick="if(confirm('Clear all fields?')){document.querySelectorAll('input,textarea').forEach(e=>{if(!e.readOnly)e.value=''});document.querySelectorAll('.calc-out,.auto-result').forEach(e=>{e.textContent='—';e.style.color=''});calcAll()}">Clear All</button>
+  <button class="btn btn-print" onclick="window.print()">🖨 Print / Save PDF</button>
+</div>
+
+<div class="pages">
+
+<!-- PAGE 1 — COVER -->
+<div class="page">
+  <div class="cover-hero">
+    <div class="cover-tag">ITS Academy · Revenue Management Laboratory</div>
+    <div class="cover-title-label">Hotel Name</div>
+    <input class="cover-field-large" type="text" placeholder="[GROUP 4] Enter your hotel name…">
+    <div class="cover-title-label" style="margin-top:16px">Tagline / Concept in one sentence</div>
+    <input class="cover-field-medium" type="text" placeholder="e.g. Authentic Florentine luxury for travellers who live like a local…">
+  </div>
+  <div class="cover-meta">
+    <div class="meta-item"><label>City & District</label><input class="field-inline" type="text" placeholder="Venice — Cannaregio / Castello"></div>
+    <div class="meta-item"><label>Classification</label><input class="field-inline" type="text" placeholder="4-Star Boutique Hotel"></div>
+    <div class="meta-item"><label>Number of Rooms</label><input class="field-inline" id="inp-rooms" data-key="inp-rooms" type="number" placeholder="50" min="1" oninput="calcAll()" value="50"></div>
+    <div class="meta-item"><label>Target Market</label><input class="field-inline" type="text" placeholder="Affluent cultural travellers, international leisure, romantic getaways · 35–65"></div>
+    <div class="meta-item"><label>Projected Opening</label><input class="field-inline" type="text" placeholder="e.g. Spring Year 1"></div>
+    <div class="meta-item"><label>Team / Group Name</label><input class="field-inline" type="text" placeholder="Your group name"></div>
+  </div>
+  <div class="section-body">
+    <div class="info-box"><strong>How to use this document:</strong> Fill in the input fields. Sections 5 and 6 calculate automatically as you type. Green cells = auto-calculated. Blue cells = you fill in.</div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 1</span></div>
+</div>
+
+<!-- PAGE 2 — EXECUTIVE SUMMARY -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div><div class="section-title">Executive Summary</div><div class="section-subtitle">Written last. Maximum one page. This is your pitch in 300 words.</div></div>
+  </div>
+  <div class="section-body">
+    <div class="gold-box"><strong>Write this section LAST.</strong> Once all numbers are calculated, summarise the whole plan here in one compelling page.</div>
+    <div class="field-group"><label class="field-label">The Opportunity — What gap does this hotel fill?</label><textarea class="tall" placeholder="Describe the market opportunity in your city. Why is this the right time, right place and right product?"></textarea></div>
+    <div class="field-group"><label class="field-label">The Solution — What makes your hotel the right answer?</label><textarea placeholder="Describe your concept, positioning and unique selling points in 3–4 sentences."></textarea></div>
+    <div class="field-group">
+      <label class="field-label">Key Financial Summary <span class="calc-badge">AUTO-FILLS FROM SECTIONS 5 & 6</span></label>
+      <div class="kpi-row">
+        <div class="kpi-card"><label>Investment Required</label><input type="text" id="kpi-invest" data-key="kpi-invest" placeholder="€ —"></div>
+        <div class="kpi-card"><label>Y1 Break Even Occ.</label><div class="kpi-val" id="kpi-be">—</div></div>
+        <div class="kpi-card"><label>Y3 Target RevPAR</label><div class="kpi-val" id="kpi-revpar">—</div></div>
+        <div class="kpi-card"><label>Y3 GOP Margin</label><div class="kpi-val" id="kpi-gop">—</div></div>
+      </div>
+    </div>
+    <div class="field-group"><label class="field-label">The Ask — What are you asking the investor for?</label><textarea class="short" placeholder="e.g. We are seeking €1,800,000 in debt financing over 20 years. The investor receives…"></textarea></div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 2</span></div>
+</div>
+
+<!-- PAGE 3 — CONCEPT & MARKET -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div><div class="section-title">Concept & Market Analysis</div><div class="section-subtitle">Who you are. Who your market is. What the numbers say.</div></div>
+  </div>
+  <div class="section-body">
+    <h4>2A — Concept & Positioning</h4>
+    <div class="grid-2">
+      <div class="field-group">
+        <label class="field-label">Positioning Statement</label>
+        <textarea placeholder="For [target guest], [hotel name] is the [category] that [key benefit] because [reason to believe]."></textarea>
+        <div class="hint">One sentence. Be specific. Avoid generic language like 'luxury experience' without defining what that means.</div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">What Feeling Do You Sell?</label>
+        <textarea placeholder="e.g. Identity (citizenM model) / Security (Premier Inn) / Status / Authentic local experience…"></textarea>
+        <div class="hint">Reference the Psychology of Pricing lesson.</div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="field-group"><label class="field-label">Primary Target Segment</label><input type="text" placeholder="e.g. Affluent leisure couples, 40–60"></div>
+      <div class="field-group"><label class="field-label">Secondary Target Segment</label><input type="text" placeholder="e.g. Cultural group tours, 55+"></div>
+      <div class="field-group"><label class="field-label">Source Markets (Top 3)</label><input type="text" placeholder="e.g. USA, Germany, UK"></div>
+    </div>
+    <div class="divider"></div>
+    <h4>2B — Market Analysis</h4>
+    <div class="grid-2">
+      <div class="field-group"><label class="field-label">Annual Tourist Arrivals to Your City</label><input type="text" placeholder="Source: tourism board / ENIT data"></div>
+      <div class="field-group">
+        <label class="field-label">Market ADR — 4-star segment (STR data)</label>
+        <input type="number" id="mkt-adr" data-key="mkt-adr" placeholder="e.g. 162" min="0" step="0.01" oninput="calcMarket()" value="195">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Market Occupancy — 4-star segment (%)</label>
+        <input type="number" id="mkt-occ" data-key="mkt-occ" placeholder="e.g. 67" min="0" max="100" step="0.1" oninput="calcMarket()" value="65">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Market RevPAR <span class="calc-badge">AUTO</span></label>
+        <div class="auto-result neutral" id="mkt-revpar">Enter ADR and occupancy above</div>
+      </div>
+    </div>
+    <div class="field-group"><label class="field-label">Key Demand Drivers for Your City</label><textarea class="short" placeholder="Major events, cultural attractions, business hubs, seasonal patterns…"></textarea></div>
+    <div class="field-group"><label class="field-label">Key Risks to Market Demand</label><textarea class="short" placeholder="Geopolitical risks, over-tourism regulation, new supply pipeline, seasonality…"></textarea></div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 3</span></div>
+</div>
+
+<!-- PAGE 4 — COMPETITIVE SET -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div><div class="section-title">Competitive Set Analysis</div><div class="section-subtitle">5 direct competitors — rates, channels, reviews</div></div>
+  </div>
+  <div class="section-body">
+    <div class="info-box">List 5 real hotels that are your direct competitors. For each: find their actual listed rates by season, OTA review score, and primary booking channels.</div>
+    <table class="data-table" style="table-layout:fixed">
+      <colgroup><col style="width:4%"><col style="width:18%"><col style="width:11%"><col style="width:9%"><col style="width:11%"><col style="width:11%"><col style="width:11%"><col style="width:10%"><col style="width:15%"></colgroup>
+      <tr>
+        <th>#</th><th>Hotel Name</th><th>District</th><th>Stars/Rooms</th>
+        <th>Low ADR (€)</th><th>Shoulder ADR (€)</th><th>Peak ADR (€)</th>
+        <th>Score /10</th><th>Primary Channel</th>
+      </tr>
+      <tbody id="comp-rows"></tbody>
+      <tr style="background:var(--gl)">
+        <td colspan="4" style="font-weight:600;color:var(--navy);font-size:11px">COMPETITIVE SET AVERAGES <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="avg-low">—</td>
+        <td class="calc-out" id="avg-shl">—</td>
+        <td class="calc-out" id="avg-pk">—</td>
+        <td class="calc-out" id="avg-score">—</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div class="divider"></div>
+    <h4>Competitor Review Analysis — Strengths & Weaknesses</h4>
+    <div id="comp-reviews"></div>
+
+    <div class="field-group"><label class="field-label">Market Gap — What does your hotel do better than the competitive set?</label><textarea placeholder="Based on the weaknesses you found, what consistent gap does YOUR hotel fill?"></textarea></div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 4</span></div>
+</div>
+
+<!-- PAGE 5 — REVENUE MODEL -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div><div class="section-title">Revenue Model & Pricing Strategy</div><div class="section-subtitle">Your ADR decision, occupancy targets, channel strategy</div></div>
+  </div>
+  <div class="section-body">
+    <h4>4A — ADR Decision</h4>
+    <div class="warn-box"><strong>Remember:</strong> You are a new property with zero reviews. Your Year 1 ADR will be below the competitive set average. Build three scenarios — the business must be viable at the CONSERVATIVE figure.</div>
+    <div class="scenario-grid">
+      <div class="scenario-card sc-conservative">
+        <div class="scenario-card-header">Conservative</div>
+        <div class="scenario-card-body">
+          <div class="field-group"><label class="field-label">Year 1 ADR (€)</label><input type="number" id="adr-con" data-key="adr-con" placeholder="e.g. 100" min="0" step="0.01" oninput="calcAll()"></div>
+          <div class="field-group"><label class="field-label">Year 1 Occupancy (%)</label><input type="number" id="occ-con" data-key="occ-con" placeholder="e.g. 52" min="0" max="100" step="0.1" oninput="calcAll()"></div>
+          <div class="field-group"><label class="field-label">Reasoning</label><textarea class="short" placeholder="Why this ADR is realistic for a new property…"></textarea></div>
+        </div>
+      </div>
+      <div class="scenario-card sc-base">
+        <div class="scenario-card-header">Base Case</div>
+        <div class="scenario-card-body">
+          <div class="field-group"><label class="field-label">Year 1 ADR (€)</label><input type="number" id="adr-base" data-key="adr-base" placeholder="e.g. 128" min="0" step="0.01" oninput="calcAll()"></div>
+          <div class="field-group"><label class="field-label">Year 1 Occupancy (%)</label><input type="number" id="occ-base" data-key="occ-base" placeholder="e.g. 61" min="0" max="100" step="0.1" oninput="calcAll()"></div>
+          <div class="field-group"><label class="field-label">Reasoning</label><textarea class="short" placeholder="What needs to go right…"></textarea></div>
+        </div>
+      </div>
+      <div class="scenario-card sc-optimistic">
+        <div class="scenario-card-header">Optimistic</div>
+        <div class="scenario-card-body">
+          <div class="field-group"><label class="field-label">Year 3 ADR (€)</label><input type="number" id="adr-opt" data-key="adr-opt" placeholder="e.g. 155" min="0" step="0.01" oninput="calcAll()"></div>
+          <div class="field-group"><label class="field-label">Year 3 Occupancy (%)</label><input type="number" id="occ-opt" data-key="occ-opt" placeholder="e.g. 68" min="0" max="100" step="0.1" oninput="calcAll()"></div>
+          <div class="field-group"><label class="field-label">Reasoning</label><textarea class="short" placeholder="Best case — full market position…"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th colspan="4">ADR & Occupancy Progression — All Three Years</th></tr>
+      <tr><th>Year</th><th>Conservative ADR / Occ</th><th>Base ADR / Occ</th><th>Optimistic ADR / Occ</th></tr>
+      <tr><td>Year 1</td><td><input type="text" placeholder="€___ / ___%"></td><td><input type="text" placeholder="€___ / ___%"></td><td><input type="text" placeholder="€___ / ___%"></td></tr>
+      <tr><td>Year 2</td><td><input type="text" placeholder="€___ / ___%"></td><td><input type="text" placeholder="€___ / ___%"></td><td><input type="text" placeholder="€___ / ___%"></td></tr>
+      <tr><td>Year 3</td><td><input type="text" placeholder="€___ / ___%"></td><td><input type="text" placeholder="€___ / ___%"></td><td><input type="text" placeholder="€___ / ___%"></td></tr>
+    </table>
+
+    <div class="divider"></div>
+    <h4>4B — Channel Strategy</h4>
+    <table class="data-table">
+      <tr><th>Channel</th><th>Year 1 Mix %</th><th>Year 3 Target %</th><th>Commission / Cost</th><th>Strategic reason</th></tr>
+      <tr><td>Direct (hotel website)</td><td><input type="number" id="ch-direct" data-key="ch-direct" placeholder="%" min="0" max="100" oninput="calcChannelTotal()"></td><td><input type="text" placeholder="___ %"></td><td><input type="text" placeholder="~0 variable"></td><td><input type="text" placeholder="Reason…"></td></tr>
+      <tr><td>Booking.com</td><td><input type="number" id="ch-bcom" data-key="ch-bcom" placeholder="%" min="0" max="100" oninput="calcChannelTotal()"></td><td><input type="text" placeholder="___ %"></td><td><input type="text" placeholder="15–18%"></td><td><input type="text" placeholder="Reason…"></td></tr>
+      <tr><td>Expedia / Hotels.com</td><td><input type="number" id="ch-exp" data-key="ch-exp" placeholder="%" min="0" max="100" oninput="calcChannelTotal()"></td><td><input type="text" placeholder="___ %"></td><td><input type="text" placeholder="15–22%"></td><td><input type="text" placeholder="Reason…"></td></tr>
+      <tr><td>Google Hotel Ads</td><td><input type="number" id="ch-gha" data-key="ch-gha" placeholder="%" min="0" max="100" oninput="calcChannelTotal()"></td><td><input type="text" placeholder="___ %"></td><td><input type="text" placeholder="8–12%"></td><td><input type="text" placeholder="Reason…"></td></tr>
+      <tr><td>Other (GDS / Groups)</td><td><input type="number" id="ch-other" data-key="ch-other" placeholder="%" min="0" max="100" oninput="calcChannelTotal()"></td><td><input type="text" placeholder="___ %"></td><td><input type="text" placeholder="Varies"></td><td><input type="text" placeholder="Reason…"></td></tr>
+      <tr style="background:var(--gl)">
+        <td style="font-weight:600">Total <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="ch-total" colspan="4">—</td>
+      </tr>
+    </table>
+    <div class="grid-2">
+      <div class="field-group"><label class="field-label">Genius / Preferred Partner Strategy</label><textarea class="short" placeholder="Will you join Genius? Why or why not?"></textarea></div>
+      <div class="field-group"><label class="field-label">Direct Booking Incentives</label><textarea class="short" placeholder="What will you offer guests to book direct?"></textarea></div>
+    </div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 5</span></div>
+</div>
+
+<!-- PAGE 6 — COSTS & BREAK EVEN -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div><div class="section-title">Cost Structure & Break Even Analysis</div><div class="section-subtitle">The numbers that determine whether this business survives</div></div>
+  </div>
+  <div class="section-body">
+    <div class="brief-box"><div class="brief-title">📋  GROUP 4 BRIEF — Pre-filled data</div><div>• Location: Cannaregio / Castello district, Venice — authentic residential neighbourhoods</div><div>• Property: Historic palazzo conversion · 50 rooms</div><div>• Target: Affluent cultural travellers, international leisure, romantic getaways · 35–65</div><div>• Fixed costs/year: €1,389,000 · Variable cost/room (excl. OTA): €45.80</div><div>• STR market ADR (4-star Venice): €195 · Market occupancy: 65%</div><div>• Total investment: €2,500,000 · Equity: €350,000 · Bank loan: €2,150,000</div><div style="margin-top:4px">⚠️ Venice has extreme seasonality: peak summer ADR can reach €300–€400+, but winter (Nov–Feb) drops significantly.</div><div style="margin-top:4px">⚠️ Tourist tax and overtourism regulation are growing risks — model seasonal variation carefully.</div></div>
+<h4>5A — Cost Inputs (from your Group Brief)</h4>
+    <div class="grid-2">
+      <div>
+        <table class="data-table">
+          <tr><th colspan="2">Fixed Costs</th></tr>
+          <tr><td>Annual Fixed Costs (€)</td><td><input type="number" id="fixed-costs" data-key="fixed-costs" placeholder="e.g. 1245000" min="0" oninput="calcAll()" value="1389000"></td></tr>
+          <tr><td>Number of Rooms</td><td><input type="number" id="rooms" data-key="rooms" placeholder="50" min="1" oninput="calcAll()" value="50"></td></tr>
+          <tr><td>Total Room Nights / year <span class="calc-badge">AUTO</span></td><td class="calc-out" id="total-rn">18,250</td></tr>
+        </table>
+      </div>
+      <div>
+        <table class="data-table">
+          <tr><th colspan="2">Variable Costs per Room</th></tr>
+          <tr><td>Variable Cost / room excl. OTA (€)</td><td><input type="number" id="var-cost" data-key="var-cost" placeholder="e.g. 43.30" min="0" step="0.01" oninput="calcAll()" value="45.8"></td></tr>
+          <tr><td>OTA Commission Rate (%)</td><td><input type="number" id="ota-rate" data-key="ota-rate" placeholder="e.g. 17" min="0" max="100" step="0.1" oninput="calcAll()" value="17"></td></tr>
+          <tr><td>OTA Mix (%)</td><td><input type="number" id="ota-mix" data-key="ota-mix" placeholder="e.g. 55" min="0" max="100" step="0.1" oninput="calcAll()" value="55"></td></tr>
+          <tr><td>Weighted Variable Cost <span class="calc-badge">AUTO</span></td><td class="calc-out" id="wvc">—</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h4>5B — Break Even Calculations <span class="calc-badge">FULLY AUTOMATIC</span></h4>
+    <div class="green-box">All cells below calculate automatically as you type above. You only need to fill in the ADR and OTA mix for each scenario.</div>
+
+    <table class="data-table">
+      <tr>
+        <th>Scenario</th><th>ADR (€)</th><th>OTA Mix %</th>
+        <th>Weighted Var. Cost (€) <span class="calc-badge">AUTO</span></th>
+        <th>Contribution Margin (€) <span class="calc-badge">AUTO</span></th>
+        <th>Break Even Occ % <span class="calc-badge">AUTO</span></th>
+        <th>Break Even Room Nights <span class="calc-badge">AUTO</span></th>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:var(--red)">A — Conservative</td>
+        <td><input type="number" id="be-adr-a" data-key="be-adr-a" placeholder="€" min="0" step="0.01" oninput="calcBE()"></td>
+        <td><input type="number" id="be-mix-a" data-key="be-mix-a" placeholder="%" min="0" max="100" step="0.1" oninput="calcBE()"></td>
+        <td class="calc-out" id="be-wvc-a">—</td>
+        <td class="calc-out" id="be-cm-a">—</td>
+        <td class="calc-out" id="be-occ-a">—</td>
+        <td class="calc-out" id="be-rn-a">—</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:var(--blue)">B — Base Case</td>
+        <td><input type="number" id="be-adr-b" data-key="be-adr-b" placeholder="€" min="0" step="0.01" oninput="calcBE()"></td>
+        <td><input type="number" id="be-mix-b" data-key="be-mix-b" placeholder="%" min="0" max="100" step="0.1" oninput="calcBE()"></td>
+        <td class="calc-out" id="be-wvc-b">—</td>
+        <td class="calc-out" id="be-cm-b">—</td>
+        <td class="calc-out" id="be-occ-b">—</td>
+        <td class="calc-out" id="be-rn-b">—</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:var(--green)">C — Year 3 Target</td>
+        <td><input type="number" id="be-adr-c" data-key="be-adr-c" placeholder="€" min="0" step="0.01" oninput="calcBE()"></td>
+        <td><input type="number" id="be-mix-c" data-key="be-mix-c" placeholder="%" min="0" max="100" step="0.1" oninput="calcBE()"></td>
+        <td class="calc-out" id="be-wvc-c">—</td>
+        <td class="calc-out" id="be-cm-c">—</td>
+        <td class="calc-out" id="be-occ-c">—</td>
+        <td class="calc-out" id="be-rn-c">—</td>
+      </tr>
+    </table>
+
+    <div class="field-group"><label class="field-label">Break Even Interpretation</label><textarea placeholder="Is the conservative break even achievable in your market? How long to reach profitability? What is the margin of safety at base case occupancy?"></textarea></div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 6</span></div>
+</div>
+
+<!-- PAGE 7 — P&L -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <div><div class="section-title">P&L Projection — Year 1 / Year 2 / Year 3</div><div class="section-subtitle">Simplified Profit & Loss — Base Case Scenario</div></div>
+  </div>
+  <div class="section-body">
+    <div class="warn-box">Enter Room Revenue and other revenues. Variable costs and GOP calculate automatically from your cost inputs in Section 5.</div>
+    <div class="green-box"><strong>How it works:</strong> Room Revenue = ADR × Occupancy% × Room Nights. Variable costs are calculated from your Section 5 inputs. You manually enter F&B and other lines. GOP = Total Revenue − Total Variable Costs − Fixed Costs.</div>
+
+    <table class="data-table">
+      <tr>
+        <th style="width:36%">Line Item</th>
+        <th style="width:18%">Year 1 (€000)</th>
+        <th style="width:18%">Year 2 (€000)</th>
+        <th style="width:18%">Year 3 (€000)</th>
+        <th style="width:10%">Notes</th>
+      </tr>
+      <!-- REVENUE -->
+      <tr><td colspan="5" style="background:var(--lb);font-weight:700;font-size:11px;letter-spacing:.5px;color:var(--navy)">REVENUE</td></tr>
+      <tr>
+        <td>Room Revenue <span class="calc-badge">AUTO from ADR×Occ%×RN</span></td>
+        <td class="calc-out" id="pl-rev-room-1">—</td>
+        <td class="calc-out" id="pl-rev-room-2">—</td>
+        <td class="calc-out" id="pl-rev-room-3">—</td>
+        <td><input type="text" placeholder="ADR×Occ×18,250"></td>
+      </tr>
+      <tr>
+        <td>F&B Revenue</td>
+        <td><input type="number" id="pl-fb-1" data-key="pl-fb-1" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="number" id="pl-fb-2" data-key="pl-fb-2" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="number" id="pl-fb-3" data-key="pl-fb-3" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="text" placeholder="€000"></td>
+      </tr>
+      <tr>
+        <td>Other Revenue</td>
+        <td><input type="number" id="pl-other-1" data-key="pl-other-1" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="number" id="pl-other-2" data-key="pl-other-2" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="number" id="pl-other-3" data-key="pl-other-3" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="text" placeholder="€000"></td>
+      </tr>
+      <tr style="background:var(--gl)">
+        <td style="font-weight:700">TOTAL REVENUE <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="pl-tot-rev-1">—</td>
+        <td class="calc-out" id="pl-tot-rev-2">—</td>
+        <td class="calc-out" id="pl-tot-rev-3">—</td>
+        <td></td>
+      </tr>
+      <!-- VARIABLE COSTS -->
+      <tr><td colspan="5" style="background:#FEF3E8;font-weight:700;font-size:11px;letter-spacing:.5px;color:#5D2E0C">VARIABLE COSTS</td></tr>
+      <tr>
+        <td>Rooms Variable Cost <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="pl-vc-1">—</td>
+        <td class="calc-out" id="pl-vc-2">—</td>
+        <td class="calc-out" id="pl-vc-3">—</td>
+        <td><input type="text" placeholder="WVC × rooms sold"></td>
+      </tr>
+      <tr>
+        <td>OTA Commissions <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="pl-ota-1">—</td>
+        <td class="calc-out" id="pl-ota-2">—</td>
+        <td class="calc-out" id="pl-ota-3">—</td>
+        <td><input type="text" placeholder="OTA mix × revenue × commission"></td>
+      </tr>
+      <tr>
+        <td>F&B Variable Cost</td>
+        <td><input type="number" id="pl-fbvc-1" data-key="pl-fbvc-1" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="number" id="pl-fbvc-2" data-key="pl-fbvc-2" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="number" id="pl-fbvc-3" data-key="pl-fbvc-3" placeholder="0" min="0" step="0.1" oninput="calcPL()"></td>
+        <td><input type="text" placeholder="€000"></td>
+      </tr>
+      <tr style="background:#FEF3E8">
+        <td style="font-weight:700">TOTAL VARIABLE COSTS <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="pl-tot-vc-1">—</td>
+        <td class="calc-out" id="pl-tot-vc-2">—</td>
+        <td class="calc-out" id="pl-tot-vc-3">—</td>
+        <td></td>
+      </tr>
+      <!-- FIXED COSTS -->
+      <tr><td colspan="5" style="background:#F0FFF0;font-weight:700;font-size:11px;letter-spacing:.5px;color:#0D3B12">FIXED COSTS</td></tr>
+      <tr>
+        <td>Total Fixed Costs <span class="calc-badge">AUTO from Section 5</span></td>
+        <td class="calc-out" id="pl-fc-1">—</td>
+        <td class="calc-out" id="pl-fc-2">—</td>
+        <td class="calc-out" id="pl-fc-3">—</td>
+        <td><input type="text" placeholder="From brief"></td>
+      </tr>
+      <!-- GOP -->
+      <tr><td colspan="5" style="background:var(--navy);height:2px"></td></tr>
+      <tr style="background:var(--gl)">
+        <td style="font-weight:700;font-size:13px;color:var(--navy)">GOP — Gross Operating Profit <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="pl-gop-1">—</td>
+        <td class="calc-out" id="pl-gop-2">—</td>
+        <td class="calc-out" id="pl-gop-3">—</td>
+        <td></td>
+      </tr>
+      <tr style="background:var(--gl)">
+        <td style="color:var(--muted)">GOP Margin % <span class="calc-badge">AUTO</span></td>
+        <td class="calc-out" id="pl-gop-pct-1">—</td>
+        <td class="calc-out" id="pl-gop-pct-2">—</td>
+        <td class="calc-out" id="pl-gop-pct-3">—</td>
+        <td style="font-size:11px;color:var(--muted)">Benchmark: 30–45%</td>
+      </tr>
+    </table>
+
+    <!-- P&L inputs for Year 2 and 3 ADR/Occ -->
+    <div class="gold-box" style="margin-top:16px">
+      <strong>Year 2 & 3 Room Revenue inputs:</strong> Enter ADR and occupancy for each year to auto-calculate room revenue.
+      <div class="grid-2" style="margin-top:12px">
+        <div>
+          <label class="field-label">Year 2 ADR (€)</label>
+          <input type="number" id="pl-adr-2" data-key="pl-adr-2" placeholder="e.g. 128" min="0" step="0.01" oninput="calcPL()">
+          <label class="field-label" style="margin-top:8px">Year 2 Occupancy (%)</label>
+          <input type="number" id="pl-occ-2" data-key="pl-occ-2" placeholder="e.g. 62" min="0" max="100" step="0.1" oninput="calcPL()">
+        </div>
+        <div>
+          <label class="field-label">Year 3 ADR (€)</label>
+          <input type="number" id="pl-adr-3" data-key="pl-adr-3" placeholder="e.g. 155" min="0" step="0.01" oninput="calcPL()">
+          <label class="field-label" style="margin-top:8px">Year 3 Occupancy (%)</label>
+          <input type="number" id="pl-occ-3" data-key="pl-occ-3" placeholder="e.g. 68" min="0" max="100" step="0.1" oninput="calcPL()">
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-top:16px"><label class="field-label">P&L Commentary</label><textarea class="short" placeholder="Is Year 1 a loss? When does the business turn profitable? Is the Year 3 GOP margin within sector benchmarks (30–45%)?"></textarea></div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 7</span></div>
+</div>
+
+<!-- PAGE 8 — RISK ANALYSIS -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <div><div class="section-title">Risk Analysis</div><div class="section-subtitle">Top 3 risks — identified, quantified, with a response plan</div></div>
+  </div>
+  <div class="section-body">
+    <div class="gold-box"><strong>The golden rule:</strong> Risks must be quantified, not just named. "If occupancy drops 15%, break even rises from X% to Y%, and the hotel loses €Z per month."</div>
+    <div id="risk-rows"></div>
+    <div class="field-group">
+      <label class="field-label">Cash Reserve Calculation <span class="calc-badge">AUTO</span></label>
+      <div class="grid-3">
+        <div class="field-group"><label class="field-label">Monthly Fixed Cost Burn</label><div class="auto-result neutral" id="monthly-burn">—</div></div>
+        <div class="field-group"><label class="field-label">Working Capital Reserve (€)</label><input type="number" id="wc-reserve" data-key="wc-reserve" placeholder="e.g. 180000" min="0" oninput="calcReserve()"></div>
+        <div class="field-group"><label class="field-label">Months of Survival <span class="calc-badge">AUTO</span></label><div class="auto-result neutral" id="months-survival">—</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 8</span></div>
+</div>
+
+<!-- PAGE 9 — INVESTMENT SUMMARY -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <div><div class="section-title">Investment Summary & The Ask</div><div class="section-subtitle">What you need. What the investor gets. Why now.</div></div>
+  </div>
+  <div class="section-body">
+    <h4>Investment Structure</h4>
+    <table class="data-table">
+      <tr><th colspan="3">Total Investment Required</th></tr>
+      <tr><td>Renovation / Construction (€)</td><td><input type="number" id="inv-reno" data-key="inv-reno" placeholder="e.g. 1500000" min="0" oninput="calcInvestment()" value="1610000"></td><td class="pre-filled">From Group Brief</td></tr>
+      <tr><td>FF&E — Furniture, Fixtures & Equipment (€)</td><td><input type="number" id="inv-ffe" data-key="inv-ffe" placeholder="e.g. 380000" min="0" oninput="calcInvestment()" value="420000"></td><td class="pre-filled">From Group Brief</td></tr>
+      <tr><td>Pre-opening costs (€)</td><td><input type="number" id="inv-preopening" data-key="inv-preopening" placeholder="e.g. 220000" min="0" oninput="calcInvestment()" value="270000"></td><td class="pre-filled">From Group Brief</td></tr>
+      <tr><td>Working capital reserve (€)</td><td><input type="number" id="inv-wc" data-key="inv-wc" placeholder="e.g. 180000" min="0" oninput="calcInvestment()" value="200000"></td><td class="pre-filled">From Group Brief</td></tr>
+      <tr style="background:var(--gl)"><td style="font-weight:700">TOTAL INVESTMENT <span class="calc-badge">AUTO</span></td><td class="calc-out" id="inv-total" colspan="2">—</td></tr>
+      <tr><td>Owner equity (€)</td><td><input type="number" id="inv-equity" data-key="inv-equity" placeholder="e.g. 300000" min="0" oninput="calcInvestment()" value="350000"></td><td class="pre-filled">From Group Brief</td></tr>
+      <tr style="background:#FDF0EE"><td style="font-weight:700;color:var(--red)">INVESTOR / BANK FINANCING REQUIRED <span class="calc-badge">AUTO</span></td><td class="calc-out-red" id="inv-loan" colspan="2">—</td></tr>
+    </table>
+
+    <div class="divider"></div>
+    <h4>Why This Investment Makes Sense</h4>
+    <div class="grid-2">
+      <div class="field-group"><label class="field-label">Year 3 Annual GOP (projected) <span class="calc-badge">AUTO from Section 6</span></label><div class="auto-result neutral" id="why-gop">—</div></div>
+      <div class="field-group"><label class="field-label">Est. Property Value at Year 5 (10× EBITDA) <span class="calc-badge">AUTO</span></label><div class="auto-result neutral" id="why-value">—</div></div>
+      <div class="field-group"><label class="field-label">Estimated Payback Period <span class="calc-badge">AUTO</span></label><div class="auto-result neutral" id="why-payback">—</div></div>
+      <div class="field-group"><label class="field-label">Annual Loan Repayment (from brief)</label><input type="number" id="loan-repayment" data-key="loan-repayment" placeholder="e.g. 145000" min="0" oninput="calcAll()" value="156000"></div>
+    </div>
+
+    <div class="field-group"><label class="field-label">Why This Hotel, This City, This Moment — Your Final Argument</label><textarea class="tall" placeholder="This is your closing argument. Why should the investor choose YOUR hotel over the other two groups? Be specific. Use the data you have gathered. This is your pitch."></textarea></div>
+
+    <div style="background:var(--navy);border-radius:6px;padding:20px 24px;margin-top:8px">
+      <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:10px">Team Declaration</div>
+      <div style="color:rgba(255,255,255,.7);font-size:12px;line-height:1.6;margin-bottom:14px">We confirm that the projections in this business plan are based on real competitive set research, honest ADR assumptions validated against actual market data, and a break even analysis that accounts for genuine risks.</div>
+      <div class="grid-3">
+        <div><div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Team Member 1</div><input type="text" placeholder="Name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.3);color:white;font-size:13px;width:100%"></div>
+        <div><div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Team Member 2</div><input type="text" placeholder="Name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.3);color:white;font-size:13px;width:100%"></div>
+        <div><div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Team Member 3</div><input type="text" placeholder="Name" style="background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.3);color:white;font-size:13px;width:100%"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>CONFIDENTIAL — GROUP 4  ·  Venice — Cannaregio / Castello</span><span>Page 9  ·  END OF DOCUMENT</span></div>
+</div>
+
+</div>
+
+<script>
+// ── INIT dynamic sections ──────────────────────────────────────────────
+(function buildDynamic(){
+  const tbody  = document.getElementById('comp-rows');
+  const reviews = document.getElementById('comp-reviews');
+  for(let i=1;i<=5;i++){
+    tbody.innerHTML += `<tr>
+      <td style="text-align:center;font-weight:600;color:var(--blue)">${i}</td>
+      <td><input type="text" data-key="c${i}_name" placeholder="Hotel name"></td>
+      <td><input type="text" data-key="c${i}_dist" placeholder="District"></td>
+      <td><input type="text" data-key="c${i}_stars" placeholder="4★ / 00"></td>
+      <td><input type="number" class="low-adr" data-key="c${i}_low" placeholder="€" min="0" step="0.01" oninput="calcCompAvg()"></td>
+      <td><input type="number" class="shl-adr" data-key="c${i}_shl" placeholder="€" min="0" step="0.01" oninput="calcCompAvg()"></td>
+      <td><input type="number" class="pk-adr"  data-key="c${i}_pk"  placeholder="€" min="0" step="0.01" oninput="calcCompAvg()"></td>
+      <td><input type="number" class="score"   data-key="c${i}_sc"  placeholder="0.0" min="0" max="10" step="0.1" oninput="calcCompAvg()"></td>
+      <td><input type="text" data-key="c${i}_ch" placeholder="Booking.com / Direct…"></td>
+    </tr>`;
+    reviews.innerHTML += `
+    <div style="border:1.5px solid var(--border);border-radius:6px;margin-bottom:14px;overflow:hidden">
+      <div style="background:var(--navy);padding:9px 16px;display:flex;align-items:center;gap:10px">
+        <span style="background:var(--gold);color:var(--navy);width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:11px">${i}</span>
+        <input type="text" data-key="r${i}_name" placeholder="Competitor ${i} — hotel name" style="background:transparent;border:none;color:white;font-size:13px;font-weight:600;flex:1">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr">
+        <div style="padding:12px 16px;border-right:1px solid var(--border)">
+          <div style="font-size:10px;font-weight:600;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">✓ 3 Strengths</div>
+          <input type="text" data-key="r${i}_s1" placeholder="Strength 1" style="width:100%;margin-bottom:6px">
+          <input type="text" data-key="r${i}_s2" placeholder="Strength 2" style="width:100%;margin-bottom:6px">
+          <input type="text" data-key="r${i}_s3" placeholder="Strength 3" style="width:100%">
+        </div>
+        <div style="padding:12px 16px">
+          <div style="font-size:10px;font-weight:600;color:var(--red);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">✗ 3 Weaknesses</div>
+          <input type="text" data-key="r${i}_w1" placeholder="Weakness 1" style="width:100%;margin-bottom:6px">
+          <input type="text" data-key="r${i}_w2" placeholder="Weakness 2" style="width:100%;margin-bottom:6px">
+          <input type="text" data-key="r${i}_w3" placeholder="Weakness 3" style="width:100%">
+        </div>
+      </div>
+    </div>`;
+  }
+  const rc = document.getElementById('risk-rows');
+  ['Risk 1','Risk 2','Risk 3'].forEach((r,i)=>{
+    const cols=['var(--red)','#D35400','var(--navy)'];
+    rc.innerHTML += `
+    <div class="risk-row">
+      <div class="risk-number" style="color:${cols[i]};opacity:.15">${i+1}</div>
+      <div style="overflow:hidden">
+        <div class="grid-3" style="margin-bottom:10px">
+          <div class="field-group"><label class="field-label">Risk Name</label><input type="text" data-key="risk${i}_name" placeholder="e.g. ADR underperformance"></div>
+          <div class="field-group"><label class="field-label">Probability</label><input type="text" data-key="risk${i}_prob" placeholder="Low / Medium / High"></div>
+          <div class="field-group"><label class="field-label">Impact</label><input type="text" data-key="risk${i}_imp" placeholder="Low / Medium / High"></div>
+        </div>
+        <div class="field-group"><label class="field-label">Quantified Impact</label>
+          <textarea class="short" data-key="risk${i}_quant" placeholder="If ADR is 15% below base, break even rises from X% to Y%…"></textarea></div>
+        <div class="field-group"><label class="field-label">Response Plan</label>
+          <textarea class="short" data-key="risk${i}_resp" placeholder="Activate last-minute rate strategy…"></textarea></div>
+      </div>
+    </div>`;
+  });
+  // Attach data-key to all static inputs/textareas that don't have one yet
+  let idx=0;
+  document.querySelectorAll('input:not([data-key]),textarea:not([data-key])').forEach(el=>{
+    if(el.id) el.setAttribute('data-key', el.id);
+    else el.setAttribute('data-key','anon_'+(idx++));
+  });
+  // After building DOM, init sync
+  initSync();
+})();
+
+// ── HELPERS ───────────────────────────────────────────────────────────
+function v(id){ const el=document.getElementById(id); return el?parseFloat(el.value)||0:0; }
+function s(id,txt,cls){
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.textContent=txt;
+  if(cls){el.className='';el.classList.add(cls);}
+}
+function fmt(n,dec=2){ if(!isFinite(n)||isNaN(n)) return '—'; return n.toFixed(dec); }
+function fmtK(n){ if(!isFinite(n)||isNaN(n)) return '—'; return (n/1000).toFixed(1)+'k'; }
+function fmtPct(n){ if(!isFinite(n)||isNaN(n)) return '—'; return n.toFixed(1)+'%'; }
+function fmtEuro(n){ if(!isFinite(n)||isNaN(n)) return '—'; return '€'+Math.round(n).toLocaleString('it-IT'); }
+
+// ── MARKET RevPAR ─────────────────────────────────────────────────────
+function calcMarket(){
+  const adr=v('mkt-adr'), occ=v('mkt-occ');
+  const el=document.getElementById('mkt-revpar');
+  if(adr>0&&occ>0){
+    const rp=(adr*occ/100).toFixed(2);
+    el.textContent='€'+rp;
+    el.className='auto-result';
+  } else {
+    el.textContent='Enter ADR and occupancy above';
+    el.className='auto-result neutral';
+  }
+}
+
+// ── COMPETITIVE SET AVERAGES ──────────────────────────────────────────
+function calcCompAvg(){
+  function avgOf(cls){
+    const vals=[...document.querySelectorAll('.'+cls)].map(e=>parseFloat(e.value)).filter(n=>!isNaN(n)&&n>0);
+    return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+  }
+  const low=avgOf('low-adr'), shl=avgOf('shl-adr'), pk=avgOf('pk-adr'), sc=avgOf('score');
+  document.getElementById('avg-low').textContent = low ? '€'+low.toFixed(0) : '—';
+  document.getElementById('avg-shl').textContent = shl ? '€'+shl.toFixed(0) : '—';
+  document.getElementById('avg-pk').textContent  = pk  ? '€'+pk.toFixed(0)  : '—';
+  document.getElementById('avg-score').textContent = sc ? sc.toFixed(1)+'/10' : '—';
+}
+
+// ── CHANNEL TOTAL ─────────────────────────────────────────────────────
+function calcChannelTotal(){
+  const ids=['ch-direct','ch-bcom','ch-exp','ch-gha','ch-other'];
+  const total=ids.reduce((s,id)=>s+(v(id)||0),0);
+  const el=document.getElementById('ch-total');
+  if(total===0){el.textContent='—';el.style.color='var(--navy)'; return;}
+  el.textContent=total.toFixed(1)+'%';
+  if(Math.abs(total-100)<0.5){el.style.color='var(--green)';}
+  else if(total>100){el.textContent=total.toFixed(1)+'%  ⚠ over 100%';el.style.color='var(--red)';}
+  else{el.style.color='var(--amber)';}
+}
+
+// ── BREAK EVEN ────────────────────────────────────────────────────────
+function calcBE(){
+  const fc=v('fixed-costs');
+  const rooms=v('rooms')||50;
+  const totalRN=rooms*365;
+  const baseVC=v('var-cost');
+  const baseOtaRate=v('ota-rate')/100;
+
+  ['a','b','c'].forEach(s=>{
+    const adr=v('be-adr-'+s);
+    const mix=v('be-mix-'+s)/100;
+    const otaRate=baseOtaRate||v('ota-rate')/100;
+    if(adr>0&&baseVC>0){
+      const wvc=baseVC+(mix*adr*(otaRate));
+      const cm=adr-wvc;
+      const beRN=cm>0?fc/cm:null;
+      const beOcc=beRN?beRN/totalRN*100:null;
+      document.getElementById('be-wvc-'+s).textContent = '€'+wvc.toFixed(2);
+      document.getElementById('be-cm-'+s).textContent  = cm>0?'€'+cm.toFixed(2):'⚠ negative';
+      document.getElementById('be-occ-'+s).textContent = beOcc?beOcc.toFixed(1)+'%':'—';
+      document.getElementById('be-rn-'+s).textContent  = beRN?Math.round(beRN).toLocaleString('it-IT'):'—';
+      // colour be occ
+      const occEl=document.getElementById('be-occ-'+s);
+      if(beOcc){
+        occEl.style.color=beOcc<60?'var(--green)':beOcc<80?'var(--amber)':'var(--red)';
+      }
+    } else {
+      ['wvc','cm','occ','rn'].forEach(f=>{ document.getElementById('be-'+f+'-'+s).textContent='—'; });
+    }
+  });
+
+  // update kpi-be from scenario A
+  const beOccA=document.getElementById('be-occ-a').textContent;
+  document.getElementById('kpi-be').textContent=beOccA;
+}
+
+// ── P&L ───────────────────────────────────────────────────────────────
+function calcPL(){
+  const rooms=v('rooms')||50;
+  const totalRN=rooms*365;
+  const fc=(v('fixed-costs')/1000)||0;
+  const baseVC=v('var-cost');
+  const otaRate=v('ota-rate')/100;
+
+  // Year configs: [adr-input-id, occ-input-id]
+  const years=[
+    {adrId:'adr-base',occId:'occ-base', otaMix:(v('be-mix-b')||v('ota-mix'))/100},
+    {adrId:'pl-adr-2',occId:'pl-occ-2', otaMix:(v('be-mix-b')||v('ota-mix'))/100},
+    {adrId:'pl-adr-3',occId:'pl-occ-3', otaMix:(v('be-mix-c')||v('ota-mix'))/100},
+  ];
+
+  years.forEach((yr,i)=>{
+    const n=i+1;
+    const adr=v(yr.adrId), occ=v(yr.occId)/100;
+    const mix=yr.otaMix;
+
+    if(adr>0&&occ>0){
+      const roomsOcc=totalRN*occ;
+      const roomRev=(adr*roomsOcc/1000);
+      const fb=v('pl-fb-'+n), other=v('pl-other-'+n);
+      const totRev=roomRev+fb+other;
+
+      // Variable costs
+      const otaComm=(adr*mix*otaRate*roomsOcc/1000);
+      const baseVCTotal=(baseVC*roomsOcc/1000);
+      const fbVC=v('pl-fbvc-'+n);
+      const totVC=baseVCTotal+otaComm+fbVC;
+
+      const gop=totRev-totVC-fc;
+      const gopPct=totRev>0?(gop/totRev*100):null;
+
+      document.getElementById('pl-rev-room-'+n).textContent='€'+roomRev.toFixed(1)+'k';
+      document.getElementById('pl-tot-rev-'+n).textContent='€'+totRev.toFixed(1)+'k';
+      document.getElementById('pl-vc-'+n).textContent='€'+baseVCTotal.toFixed(1)+'k';
+      document.getElementById('pl-ota-'+n).textContent='€'+otaComm.toFixed(1)+'k';
+      document.getElementById('pl-tot-vc-'+n).textContent='€'+totVC.toFixed(1)+'k';
+      document.getElementById('pl-fc-'+n).textContent='€'+fc.toFixed(1)+'k';
+
+      const gopEl=document.getElementById('pl-gop-'+n);
+      gopEl.textContent='€'+gop.toFixed(1)+'k';
+      gopEl.style.color=gop>=0?'var(--green)':'var(--red)';
+
+      const gopPctEl=document.getElementById('pl-gop-pct-'+n);
+      gopPctEl.textContent=gopPct?gopPct.toFixed(1)+'%':'—';
+      if(gopPct){
+        gopPctEl.style.color=gopPct>=30?'var(--green)':gopPct>=0?'var(--amber)':'var(--red)';
+      }
+
+      // Update KPIs from Y3
+      if(n===3){
+        document.getElementById('kpi-revpar').textContent='€'+(adr*occ).toFixed(0);
+        document.getElementById('kpi-gop').textContent=gopPct?gopPct.toFixed(1)+'%':'—';
+        document.getElementById('why-gop').textContent='€'+gop.toFixed(0)+'k';
+        document.getElementById('why-gop').className='auto-result'+(gop>=0?'':' negative');
+        // 10x EBITDA estimate
+        const val=gop*10;
+        document.getElementById('why-value').textContent=val>0?'€'+(val).toFixed(0)+'k (est.)':'—';
+        document.getElementById('why-value').className='auto-result'+(val>0?'':' neutral');
+      }
+    } else {
+      ['rev-room','tot-rev','vc','ota','tot-vc','fc','gop','gop-pct'].forEach(f=>{
+        const el=document.getElementById('pl-'+f+'-'+n);
+        if(el){el.textContent='—';el.style.color='';}
+      });
+    }
+  });
+
+  calcPayback();
+}
+
+// ── INVESTMENT ────────────────────────────────────────────────────────
+function calcInvestment(){
+  const reno=v('inv-reno'), ffe=v('inv-ffe'), pre=v('inv-preopening'), wc=v('inv-wc');
+  const total=reno+ffe+pre+wc;
+  const equity=v('inv-equity');
+  const loan=total-equity;
+
+  document.getElementById('inv-total').textContent=total>0?fmtEuro(total):'—';
+  document.getElementById('inv-loan').textContent=loan>0?fmtEuro(loan):total>0?'€0':'—';
+  document.getElementById('kpi-invest').value=total>0?fmtEuro(total):'';
+  calcPayback();
+}
+
+function calcPayback(){
+  const total=v('inv-reno')+v('inv-ffe')+v('inv-preopening')+v('inv-wc');
+  const gopY3El=document.getElementById('pl-gop-3');
+  const gopY3=gopY3El?parseFloat(gopY3El.textContent.replace(/[^0-9.-]/g,''))*1000:0;
+  const repay=v('loan-repayment');
+
+  if(total>0&&gopY3>0){
+    const annualReturn=gopY3-repay;
+    const years=annualReturn>0?(total/annualReturn).toFixed(1):'N/A';
+    document.getElementById('why-payback').textContent=annualReturn>0?years+' years':'> 20 years (check numbers)';
+    document.getElementById('why-payback').className='auto-result'+(annualReturn>0?'':' negative');
+  } else {
+    document.getElementById('why-payback').textContent='—';
+    document.getElementById('why-payback').className='auto-result neutral';
+  }
+}
+
+// ── RESERVE ───────────────────────────────────────────────────────────
+function calcReserve(){
+  const fc=v('fixed-costs');
+  const monthly=fc/12;
+  const reserve=v('wc-reserve');
+  document.getElementById('monthly-burn').textContent=fc>0?fmtEuro(monthly)+' / month':'—';
+  if(fc>0&&reserve>0){
+    const months=(reserve/monthly).toFixed(1);
+    const el=document.getElementById('months-survival');
+    el.textContent=months+' months';
+    el.className='auto-result'+(parseFloat(months)>=4?'':' negative');
+  } else {
+    document.getElementById('months-survival').textContent='—';
+  }
+}
+
+// ── TOTAL ROOMS ───────────────────────────────────────────────────────
+function calcRooms(){
+  const r=v('rooms')||50;
+  document.getElementById('total-rn').textContent=(r*365).toLocaleString('it-IT');
+  // sync cover rooms field
+  const cr=document.getElementById('inp-rooms');
+  const rr=document.getElementById('rooms');
+  if(cr&&rr&&document.activeElement!==rr) rr.value=cr.value;
+  if(cr&&rr&&document.activeElement!==cr) cr.value=rr.value;
+}
+
+// ── WEIGHTED VARIABLE COST (summary) ─────────────────────────────────
+function calcWVC(){
+  const vc=v('var-cost'), mix=v('ota-mix')/100, rate=v('ota-rate')/100;
+  const adr=v('be-adr-b')||v('adr-base')||0;
+  if(vc>0&&adr>0){
+    const wvc=vc+(mix*adr*rate);
+    document.getElementById('wvc').textContent='€'+wvc.toFixed(2);
+  } else {
+    document.getElementById('wvc').textContent='—';
+  }
+}
+
+// ── MAIN CALC ─────────────────────────────────────────────────────────
+function calcAll(){
+  calcRooms();
+  calcWVC();
+  calcBE();
+  calcPL();
+  calcInvestment();
+  calcReserve();
+  calcMarket();
+}
+
+// Pre-populate break even ADR inputs from scenario cards on input
+document.getElementById('adr-con').addEventListener('input', function(){
+  if(!document.getElementById('be-adr-a').value) document.getElementById('be-adr-a').value=this.value;
+  calcAll();
+});
+document.getElementById('adr-base').addEventListener('input', function(){
+  if(!document.getElementById('be-adr-b').value) document.getElementById('be-adr-b').value=this.value;
+  calcAll();
+});
+document.getElementById('adr-opt').addEventListener('input', function(){
+  if(!document.getElementById('be-adr-c').value) document.getElementById('be-adr-c').value=this.value;
+  calcAll();
+});
+document.getElementById('occ-con').addEventListener('input', calcAll);
+document.getElementById('occ-base').addEventListener('input', calcAll);
+document.getElementById('occ-opt').addEventListener('input', calcAll);
+document.getElementById('inp-rooms').addEventListener('input', function(){
+  document.getElementById('rooms').value=this.value;
+  calcAll();
+});
+
+// Init — local calc only (Firebase sync inits in buildDynamic)
+calcAll();
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+// FIREBASE REAL-TIME SYNC ENGINE
+// Works across any device, any network (mobile data, different WiFi, etc.)
+// Each group has its own isolated DB path — no cross-group interference.
+// ═══════════════════════════════════════════════════════════════════════════
+
+const DB_PATH      = 'sessions/group4/fields';
+const PRESENCE_PATH= 'sessions/group4/presence';
+const GROUP_LABEL  = 'GROUP 4';
+const DEBOUNCE_MS  = 500;
+
+// Random identity for this user
+const USER_NAMES  = ['Fox','Owl','Bear','Wolf','Deer','Hawk','Lynx','Crow','Kite','Swan'];
+const USER_COLORS = ['#E74C3C','#3498DB','#27AE60','#9B59B6','#E67E22','#1ABC9C','#C0392B','#2980B9'];
+const myId    = 'u_' + Math.random().toString(36).slice(2,9);
+const myName  = USER_NAMES[Math.floor(Math.random()*USER_NAMES.length)];
+const myColor = USER_COLORS[Math.floor(Math.random()*USER_COLORS.length)];
+
+let db          = null;
+let fieldsRef   = null;
+let presenceRef = null;
+let myPresRef   = null;
+let applying    = false;   // guard against echo loops
+let timers      = {};      // per-field debounce timers
+let fieldCache  = {};      // last known remote values
+
+function initSync() {
+  // Add data-key to any remaining un-keyed fields
+  let idx=0;
+  document.querySelectorAll('input:not([data-key]),textarea:not([data-key])').forEach(el=>{
+    el.setAttribute('data-key', el.id || ('anon_'+(idx++)));
+  });
+
+  try {
+    firebase.initializeApp({
+  apiKey: "AIzaSyBp3G7vT8mK2xQn4rJeW6hUoL9cPdYfNs1",
+  authDomain: "its-bp-proforma.firebaseapp.com",
+  databaseURL: "https://its-bp-proforma-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "its-bp-proforma",
+  storageBucket: "its-bp-proforma.appspot.com",
+  messagingSenderId: "847392016584",
+  appId: "1:847392016584:web:a3f8c2d1e0b4967f2a8c91"
+});
+    db = firebase.database();
+    fieldsRef   = db.ref(DB_PATH);
+    presenceRef = db.ref(PRESENCE_PATH);
+    myPresRef   = presenceRef.child(myId);
+
+    // ── Announce presence
+    myPresRef.set({ name: myName, color: myColor, ts: firebase.database.ServerValue.TIMESTAMP });
+    myPresRef.onDisconnect().remove();
+
+    // ── Heartbeat every 8s
+    setInterval(() => {
+      myPresRef.update({ ts: firebase.database.ServerValue.TIMESTAMP });
+    }, 8000);
+
+    // ── Watch presence
+    presenceRef.on('value', snap => {
+      const all = snap.val() || {};
+      const chips = document.getElementById('user-chips');
+      const countEl = document.getElementById('user-count');
+      if (!chips) return;
+      const users = Object.entries(all);
+      chips.innerHTML = users.map(([uid,[,u]])=>
+        uid === myId
+          ? `<span class="user-chip" style="background:${myColor}">👤 ${myName} (you)</span>`
+          : `<span class="user-chip" style="background:${u.color}">${u.name}</span>`
+      ).join('') || users.map(([uid,u])=>
+        `<span class="user-chip" style="background:${(u||{}).color||'#888'}">${uid===myId?'👤 ':''}${(u||{}).name||'?'}</span>`
+      ).join('');
+      if (countEl) countEl.textContent = users.length > 1
+        ? users.length + ' users online'
+        : '1 user online';
+    });
+
+    // ── Listen for remote field changes
+    fieldsRef.on('child_changed', snap => {
+      if (applying) return;
+      const key = snap.key;
+      const val = snap.val();
+      if (val === null) return;
+      const stored = val.v !== undefined ? val.v : val;
+      const writer = val.by;
+      if (writer === myId) return;  // my own echo
+
+      applyField(key, String(stored));
+    });
+
+    fieldsRef.on('child_added', snap => {
+      if (applying) return;
+      const key = snap.key;
+      const val = snap.val();
+      if (val === null) return;
+      const stored = val.v !== undefined ? val.v : val;
+      const writer = val.by;
+      if (writer === myId) return;
+
+      applyField(key, String(stored));
+    });
+
+    // ── Load full state on connect
+    fieldsRef.once('value', snap => {
+      const all = snap.val();
+      if (!all) { setSyncStatus('connected'); return; }
+      applying = true;
+      Object.entries(all).forEach(([key, val]) => {
+        const stored = val.v !== undefined ? val.v : val;
+        applyField(key, String(stored));
+        fieldCache[key] = String(stored);
+      });
+      applying = false;
+      calcAll();
+      setSyncStatus('connected');
+    });
+
+    // ── Attach input listeners
+    attachSyncListeners();
+
+    setSyncStatus('connecting');
+  } catch(err) {
+    console.error('Firebase init failed:', err);
+    setSyncStatus('offline');
+    // Still work locally
+    attachSyncListeners();
+  }
+}
+
+// Apply a single field value to the DOM
+function applyField(key, value) {
+  if (fieldCache[key] === value) return;
+  fieldCache[key] = value;
+
+  const el = document.querySelector('[data-key="' + key + '"]');
+  if (!el || el === document.activeElement) return;
+  if (el.value === value) return;
+
+  el.value = value;
+  // Yellow flash to show remote update
+  el.style.background = '#FFFDE7';
+  setTimeout(() => { el.style.background = ''; }, 700);
+  calcAll();
+}
+
+// Push a single field to Firebase
+function pushField(key, value) {
+  if (!db || !fieldsRef) return;
+  const payload = { v: value, by: myId, ts: firebase.database.ServerValue.TIMESTAMP };
+  fieldsRef.child(key).set(payload).catch(err => {
+    if (err.code === 'PERMISSION_DENIED') setSyncStatus('offline');
+  });
+  fieldCache[key] = value;
+}
+
+// Debounced push on input
+function onFieldInput(el) {
+  if (applying) return;
+  const key = el.getAttribute('data-key');
+  if (!key) return;
+  setSyncStatus('typing');
+  clearTimeout(timers[key]);
+  timers[key] = setTimeout(() => {
+    pushField(key, el.value);
+    setSyncStatus('saved');
+  }, DEBOUNCE_MS);
+}
+
+function attachSyncListeners() {
+  document.querySelectorAll('[data-key]').forEach(el => {
+    if (!el._syncBound) {
+      el.addEventListener('input', () => onFieldInput(el));
+      el._syncBound = true;
+    }
+  });
+}
+
+// Re-attach after dynamic elements added (called from calcAll or observer)
+const _syncObserver = new MutationObserver(() => attachSyncListeners());
+_syncObserver.observe(document.body, { childList: true, subtree: true });
+
+// ── Status display
+function setSyncStatus(state) {
+  const dot = document.getElementById('sync-dot');
+  const lbl = document.getElementById('sync-label');
+  if (!dot || !lbl) return;
+  const map = {
+    connecting: { c:'syncing', t:'Connecting…' },
+    connected:  { c:'ok',     t:'Live ✓' },
+    typing:     { c:'typing', t:'Typing…' },
+    saved:      { c:'saved',  t:'Saved ✓' },
+    offline:    { c:'off',    t:'Offline — local only' },
+  };
+  const s = map[state] || map.connected;
+  dot.className = 'sync-dot ' + s.c;
+  lbl.textContent = s.t;
+}
+
+// ── Share / reset
+function shareLink() {
+  const url = window.location.href;
+  const msg =
+    GROUP_LABEL + ' — Business Plan Proforma\n\n' +
+    'Open this link on your device:\n' + url + '\n\n' +
+    '✓ Works on any phone, tablet, laptop\n' +
+    '✓ Works on mobile data — no shared WiFi needed\n' +
+    '✓ Changes sync live to all teammates\n' +
+    '✓ Yellow flash = someone else just edited that field';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => alert(msg));
+  } else {
+    prompt('Share this link with your group:', url);
+  }
+}
+
+function clearAll() {
+  if (!confirm('Clear ALL fields?\nThis resets the session for everyone in your group.')) return;
+  document.querySelectorAll('input, textarea').forEach(el => {
+    if (!el.readOnly && el.type !== 'button') el.value = '';
+  });
+  document.querySelectorAll('.calc-out, .auto-result').forEach(el => {
+    el.textContent = '—'; el.style.color = '';
+  });
+  if (fieldsRef) fieldsRef.remove();
+  fieldCache = {};
+  calcAll();
+}
+
+</script>
+</body>
+</html>
